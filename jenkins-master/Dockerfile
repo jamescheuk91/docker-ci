@@ -42,7 +42,13 @@ RUN /usr/local/bin/mix local.hex --force && \
 
 WORKDIR /
 
-ENV LANG C.UTF-8
+
+ENV PHOENIX_VERSION 1.1.4
+
+# install the Phoenix Mix archive
+RUN mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phoenix_new-$PHOENIX_VERSION.ez
+
+
 ENV JAVA_VERSION 8u66
 ENV JAVA_DEBIAN_VERSION 8u72-b15-1~bpo8+1
 
