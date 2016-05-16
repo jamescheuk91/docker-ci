@@ -4,7 +4,7 @@ MAINTAINER jccf091
 # Install all dependencies
 RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list
 RUN apt-get update
-RUN apt-get install -y curl wget locales vim && \
+RUN apt-get install -y --no-install-recommends curl wget locales vim postgresql-client && \
   echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
   locale-gen
 
@@ -15,7 +15,7 @@ ENV LC_ALL en_US.UTF-8
 
 RUN echo "deb http://packages.erlang-solutions.com/debian trusty contrib" >> /etc/apt/sources.list && \
     apt-key adv --fetch-keys http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc && \
-    apt-get -qq update && apt-get install -y \
+    apt-get -qq update && apt-get install -y --no-install-recommends\
     esl-erlang \
     git \
     unzip \
