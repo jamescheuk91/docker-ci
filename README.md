@@ -39,3 +39,8 @@ docker rm jenkins-data
 #### docker-compose
 docker-compose build
 docker-compose up -d
+
+
+#### docker-compose pro
+docker-compose -f docker-compose.pro.yml build
+docker-compose -f docker-compose.pro.yml up -d

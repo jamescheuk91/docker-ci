@@ -1,14 +1,17 @@
 version: '2'
 services:
+  db:
+    image: postgres
   jenkinsdata:
     image: jccf091/jenkins-data
-
   jenkinsmaster:
     image: jccf091/jenkins-master
     volumes_from:
       - jenkinsdata
     ports:
       - "50000:50000"
+    links:
+      - "db"
   jenkinsnginx:
     image: jccf091/jenkins-nginx
     ports:

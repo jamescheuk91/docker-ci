@@ -4,15 +4,14 @@ services:
     image: postgres
   jenkinsdata:
     build: jenkins-data
-
   jenkinsmaster:
     build: jenkins-master
     volumes_from:
       - jenkinsdata
     ports:
       - "50000:50000"
-    depends_on:
-    - db
+    links:
+      - "db"
   jenkinsnginx:
     build: jenkins-nginx
     ports:

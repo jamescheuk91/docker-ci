@@ -4,8 +4,7 @@ MAINTAINER jccf091
 # Install all dependencies
 RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list
 RUN apt-get update
-RUN apt-get -y install curl wget && \
-  apt-get install locales && \
+RUN apt-get install -y curl wget locales vim && \
   echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
   locale-gen
 
