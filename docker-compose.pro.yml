@@ -10,8 +10,6 @@ services:
       - jenkinsdata
     ports:
       - "50000:50000"
-    links:
-      - "db"
   jenkinsnginx:
     image: jccf091/jenkins-nginx
     ports:
