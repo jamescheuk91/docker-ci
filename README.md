@@ -44,3 +44,7 @@ docker-compose up -d
 #### docker-compose pro
 docker-compose -f docker-compose.pro.yml build
 docker-compose -f docker-compose.pro.yml up -d
+
+#### access postgres from jenkins-master
+ping db
+set database hostname as "db"
